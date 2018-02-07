@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<configuration date="2018/02/07" author="e.World Technology Ltd.">
-  <project id="{252C59E6-E1DC-4A28-9DE4-060829D3BFB7}" file="" name="prj_simulasi" product="PHPMaker" version="14.0" datetime="2018/02/07 13:56:41" languagefolder="phplang" userlevel="-2,&quot;Anonymous&quot;,0;">
-    <table id="t_201412" name="t_201412" caption="t 201412" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
-    <table id="t_lab_db" name="t_lab_db" caption="t lab db" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
-    <table id="cf01_home_php" name="cf01_home.php" caption="Home" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
-  </project>
-</configuration>
