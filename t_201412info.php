@@ -691,18 +691,10 @@ class ct_201412 extends cTable {
 		// id
 		// COL 1
 		// COL 2
-
-		$this->COL_2->CellCssStyle = "width: 25px;";
-
 		// COL 3
 		// COL 4
 		// COL 5
-
-		$this->COL_5->CellCssStyle = "width: 25px;";
-
 		// COL 6
-		$this->COL_6->CellCssStyle = "width: 25px;";
-
 		// COL 7
 		// COL 8
 		// t_lab_db_id
@@ -923,6 +915,7 @@ class ct_201412 extends cTable {
 				$Doc->BeginExportRow();
 				if ($ExportPageType == "view") {
 					if ($this->COL_2->Exportable) $Doc->ExportCaption($this->COL_2);
+					if ($this->COL_3->Exportable) $Doc->ExportCaption($this->COL_3);
 					if ($this->COL_4->Exportable) $Doc->ExportCaption($this->COL_4);
 					if ($this->COL_5->Exportable) $Doc->ExportCaption($this->COL_5);
 					if ($this->COL_6->Exportable) $Doc->ExportCaption($this->COL_6);
@@ -970,6 +963,7 @@ class ct_201412 extends cTable {
 					$Doc->BeginExportRow($RowCnt); // Allow CSS styles if enabled
 					if ($ExportPageType == "view") {
 						if ($this->COL_2->Exportable) $Doc->ExportField($this->COL_2);
+						if ($this->COL_3->Exportable) $Doc->ExportField($this->COL_3);
 						if ($this->COL_4->Exportable) $Doc->ExportField($this->COL_4);
 						if ($this->COL_5->Exportable) $Doc->ExportField($this->COL_5);
 						if ($this->COL_6->Exportable) $Doc->ExportField($this->COL_6);

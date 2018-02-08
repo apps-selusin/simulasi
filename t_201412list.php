@@ -386,6 +386,7 @@ class ct_201412_list extends ct_201412 {
 		// Setup export options
 		$this->SetupExportOptions();
 		$this->COL_2->SetVisibility();
+		$this->COL_3->SetVisibility();
 		$this->COL_4->SetVisibility();
 		$this->COL_5->SetVisibility();
 		$this->COL_6->SetVisibility();
@@ -1141,6 +1142,7 @@ class ct_201412_list extends ct_201412 {
 			$this->CurrentOrder = ew_StripSlashes(@$_GET["order"]);
 			$this->CurrentOrderType = @$_GET["ordertype"];
 			$this->UpdateSort($this->COL_2, $bCtrl); // COL 2
+			$this->UpdateSort($this->COL_3, $bCtrl); // COL 3
 			$this->UpdateSort($this->COL_4, $bCtrl); // COL 4
 			$this->UpdateSort($this->COL_5, $bCtrl); // COL 5
 			$this->UpdateSort($this->COL_6, $bCtrl); // COL 6
@@ -1179,6 +1181,7 @@ class ct_201412_list extends ct_201412 {
 				$this->setSessionOrderBy($sOrderBy);
 				$this->setSessionOrderByList($sOrderBy);
 				$this->COL_2->setSort("");
+				$this->COL_3->setSort("");
 				$this->COL_4->setSort("");
 				$this->COL_5->setSort("");
 				$this->COL_6->setSort("");
@@ -1558,6 +1561,8 @@ class ct_201412_list extends ct_201412 {
 	function LoadDefaultValues() {
 		$this->COL_2->CurrentValue = NULL;
 		$this->COL_2->OldValue = $this->COL_2->CurrentValue;
+		$this->COL_3->CurrentValue = NULL;
+		$this->COL_3->OldValue = $this->COL_3->CurrentValue;
 		$this->COL_4->CurrentValue = NULL;
 		$this->COL_4->OldValue = $this->COL_4->CurrentValue;
 		$this->COL_5->CurrentValue = NULL;
@@ -1583,6 +1588,9 @@ class ct_201412_list extends ct_201412 {
 		if (!$this->COL_2->FldIsDetailKey) {
 			$this->COL_2->setFormValue($objForm->GetValue("x_COL_2"));
 		}
+		if (!$this->COL_3->FldIsDetailKey) {
+			$this->COL_3->setFormValue($objForm->GetValue("x_COL_3"));
+		}
 		if (!$this->COL_4->FldIsDetailKey) {
 			$this->COL_4->setFormValue($objForm->GetValue("x_COL_4"));
 		}
@@ -1605,6 +1613,7 @@ class ct_201412_list extends ct_201412 {
 		if ($this->CurrentAction <> "gridadd" && $this->CurrentAction <> "add")
 			$this->id->CurrentValue = $this->id->FormValue;
 		$this->COL_2->CurrentValue = $this->COL_2->FormValue;
+		$this->COL_3->CurrentValue = $this->COL_3->FormValue;
 		$this->COL_4->CurrentValue = $this->COL_4->FormValue;
 		$this->COL_5->CurrentValue = $this->COL_5->FormValue;
 		$this->COL_6->CurrentValue = $this->COL_6->FormValue;
@@ -1745,18 +1754,10 @@ class ct_201412_list extends ct_201412 {
 		// id
 		// COL 1
 		// COL 2
-
-		$this->COL_2->CellCssStyle = "width: 25px;";
-
 		// COL 3
 		// COL 4
 		// COL 5
-
-		$this->COL_5->CellCssStyle = "width: 25px;";
-
 		// COL 6
-		$this->COL_6->CellCssStyle = "width: 25px;";
-
 		// COL 7
 		// COL 8
 		// t_lab_db_id
@@ -1834,6 +1835,11 @@ class ct_201412_list extends ct_201412 {
 			$this->COL_2->HrefValue = "";
 			$this->COL_2->TooltipValue = "";
 
+			// COL 3
+			$this->COL_3->LinkCustomAttributes = "";
+			$this->COL_3->HrefValue = "";
+			$this->COL_3->TooltipValue = "";
+
 			// COL 4
 			$this->COL_4->LinkCustomAttributes = "";
 			$this->COL_4->HrefValue = "";
@@ -1860,6 +1866,12 @@ class ct_201412_list extends ct_201412 {
 			$this->COL_2->EditCustomAttributes = "";
 			$this->COL_2->EditValue = ew_HtmlEncode($this->COL_2->CurrentValue);
 			$this->COL_2->PlaceHolder = ew_RemoveHtml($this->COL_2->FldCaption());
+
+			// COL 3
+			$this->COL_3->EditAttrs["class"] = "form-control";
+			$this->COL_3->EditCustomAttributes = "";
+			$this->COL_3->EditValue = ew_HtmlEncode($this->COL_3->CurrentValue);
+			$this->COL_3->PlaceHolder = ew_RemoveHtml($this->COL_3->FldCaption());
 
 			// COL 4
 			$this->COL_4->EditAttrs["class"] = "form-control";
@@ -1890,6 +1902,10 @@ class ct_201412_list extends ct_201412 {
 			$this->COL_2->LinkCustomAttributes = "";
 			$this->COL_2->HrefValue = "";
 
+			// COL 3
+			$this->COL_3->LinkCustomAttributes = "";
+			$this->COL_3->HrefValue = "";
+
 			// COL 4
 			$this->COL_4->LinkCustomAttributes = "";
 			$this->COL_4->HrefValue = "";
@@ -1912,6 +1928,12 @@ class ct_201412_list extends ct_201412 {
 			$this->COL_2->EditCustomAttributes = "";
 			$this->COL_2->EditValue = ew_HtmlEncode($this->COL_2->CurrentValue);
 			$this->COL_2->PlaceHolder = ew_RemoveHtml($this->COL_2->FldCaption());
+
+			// COL 3
+			$this->COL_3->EditAttrs["class"] = "form-control";
+			$this->COL_3->EditCustomAttributes = "";
+			$this->COL_3->EditValue = ew_HtmlEncode($this->COL_3->CurrentValue);
+			$this->COL_3->PlaceHolder = ew_RemoveHtml($this->COL_3->FldCaption());
 
 			// COL 4
 			$this->COL_4->EditAttrs["class"] = "form-control";
@@ -1965,6 +1987,10 @@ class ct_201412_list extends ct_201412 {
 
 			$this->COL_2->LinkCustomAttributes = "";
 			$this->COL_2->HrefValue = "";
+
+			// COL 3
+			$this->COL_3->LinkCustomAttributes = "";
+			$this->COL_3->HrefValue = "";
 
 			// COL 4
 			$this->COL_4->LinkCustomAttributes = "";
@@ -2048,6 +2074,9 @@ class ct_201412_list extends ct_201412 {
 			// COL 2
 			$this->COL_2->SetDbValueDef($rsnew, $this->COL_2->CurrentValue, NULL, $this->COL_2->ReadOnly);
 
+			// COL 3
+			$this->COL_3->SetDbValueDef($rsnew, $this->COL_3->CurrentValue, NULL, $this->COL_3->ReadOnly);
+
 			// COL 4
 			$this->COL_4->SetDbValueDef($rsnew, $this->COL_4->CurrentValue, NULL, $this->COL_4->ReadOnly);
 
@@ -2105,6 +2134,9 @@ class ct_201412_list extends ct_201412 {
 
 		// COL 2
 		$this->COL_2->SetDbValueDef($rsnew, $this->COL_2->CurrentValue, NULL, FALSE);
+
+		// COL 3
+		$this->COL_3->SetDbValueDef($rsnew, $this->COL_3->CurrentValue, NULL, FALSE);
 
 		// COL 4
 		$this->COL_4->SetDbValueDef($rsnew, $this->COL_4->CurrentValue, NULL, FALSE);
@@ -2794,6 +2826,8 @@ $t_201412_list->ShowMessage();
 <option value="20"<?php if ($t_201412_list->DisplayRecs == 20) { ?> selected<?php } ?>>20</option>
 <option value="50"<?php if ($t_201412_list->DisplayRecs == 50) { ?> selected<?php } ?>>50</option>
 <option value="100"<?php if ($t_201412_list->DisplayRecs == 100) { ?> selected<?php } ?>>100</option>
+<option value="200"<?php if ($t_201412_list->DisplayRecs == 200) { ?> selected<?php } ?>>200</option>
+<option value="500"<?php if ($t_201412_list->DisplayRecs == 500) { ?> selected<?php } ?>>500</option>
 <option value="ALL"<?php if ($t_201412->getRecordsPerPage() == -1) { ?> selected<?php } ?>><?php echo $Language->Phrase("AllRecords") ?></option>
 </select>
 </div>
@@ -2833,10 +2867,19 @@ $t_201412_list->ListOptions->Render("header", "left");
 ?>
 <?php if ($t_201412->COL_2->Visible) { // COL 2 ?>
 	<?php if ($t_201412->SortUrl($t_201412->COL_2) == "") { ?>
-		<th data-name="COL_2"><div id="elh_t_201412_COL_2" class="t_201412_COL_2"><div class="ewTableHeaderCaption" style="width: 25px;"><?php echo $t_201412->COL_2->FldCaption() ?></div></div></th>
+		<th data-name="COL_2"><div id="elh_t_201412_COL_2" class="t_201412_COL_2"><div class="ewTableHeaderCaption"><?php echo $t_201412->COL_2->FldCaption() ?></div></div></th>
 	<?php } else { ?>
 		<th data-name="COL_2"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $t_201412->SortUrl($t_201412->COL_2) ?>',2);"><div id="elh_t_201412_COL_2" class="t_201412_COL_2">
-			<div class="ewTableHeaderBtn" style="width: 25px;"><span class="ewTableHeaderCaption"><?php echo $t_201412->COL_2->FldCaption() ?><?php echo $Language->Phrase("SrchLegend") ?></span><span class="ewTableHeaderSort"><?php if ($t_201412->COL_2->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($t_201412->COL_2->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
+			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $t_201412->COL_2->FldCaption() ?><?php echo $Language->Phrase("SrchLegend") ?></span><span class="ewTableHeaderSort"><?php if ($t_201412->COL_2->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($t_201412->COL_2->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
+        </div></div></th>
+	<?php } ?>
+<?php } ?>		
+<?php if ($t_201412->COL_3->Visible) { // COL 3 ?>
+	<?php if ($t_201412->SortUrl($t_201412->COL_3) == "") { ?>
+		<th data-name="COL_3"><div id="elh_t_201412_COL_3" class="t_201412_COL_3"><div class="ewTableHeaderCaption"><?php echo $t_201412->COL_3->FldCaption() ?></div></div></th>
+	<?php } else { ?>
+		<th data-name="COL_3"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $t_201412->SortUrl($t_201412->COL_3) ?>',2);"><div id="elh_t_201412_COL_3" class="t_201412_COL_3">
+			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $t_201412->COL_3->FldCaption() ?><?php echo $Language->Phrase("SrchLegend") ?></span><span class="ewTableHeaderSort"><?php if ($t_201412->COL_3->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($t_201412->COL_3->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
@@ -2851,19 +2894,19 @@ $t_201412_list->ListOptions->Render("header", "left");
 <?php } ?>		
 <?php if ($t_201412->COL_5->Visible) { // COL 5 ?>
 	<?php if ($t_201412->SortUrl($t_201412->COL_5) == "") { ?>
-		<th data-name="COL_5"><div id="elh_t_201412_COL_5" class="t_201412_COL_5"><div class="ewTableHeaderCaption" style="width: 25px;"><?php echo $t_201412->COL_5->FldCaption() ?></div></div></th>
+		<th data-name="COL_5"><div id="elh_t_201412_COL_5" class="t_201412_COL_5"><div class="ewTableHeaderCaption"><?php echo $t_201412->COL_5->FldCaption() ?></div></div></th>
 	<?php } else { ?>
 		<th data-name="COL_5"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $t_201412->SortUrl($t_201412->COL_5) ?>',2);"><div id="elh_t_201412_COL_5" class="t_201412_COL_5">
-			<div class="ewTableHeaderBtn" style="width: 25px;"><span class="ewTableHeaderCaption"><?php echo $t_201412->COL_5->FldCaption() ?><?php echo $Language->Phrase("SrchLegend") ?></span><span class="ewTableHeaderSort"><?php if ($t_201412->COL_5->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($t_201412->COL_5->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
+			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $t_201412->COL_5->FldCaption() ?><?php echo $Language->Phrase("SrchLegend") ?></span><span class="ewTableHeaderSort"><?php if ($t_201412->COL_5->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($t_201412->COL_5->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
 <?php if ($t_201412->COL_6->Visible) { // COL 6 ?>
 	<?php if ($t_201412->SortUrl($t_201412->COL_6) == "") { ?>
-		<th data-name="COL_6"><div id="elh_t_201412_COL_6" class="t_201412_COL_6"><div class="ewTableHeaderCaption" style="width: 25px;"><?php echo $t_201412->COL_6->FldCaption() ?></div></div></th>
+		<th data-name="COL_6"><div id="elh_t_201412_COL_6" class="t_201412_COL_6"><div class="ewTableHeaderCaption"><?php echo $t_201412->COL_6->FldCaption() ?></div></div></th>
 	<?php } else { ?>
 		<th data-name="COL_6"><div class="ewPointer" onclick="ew_Sort(event,'<?php echo $t_201412->SortUrl($t_201412->COL_6) ?>',2);"><div id="elh_t_201412_COL_6" class="t_201412_COL_6">
-			<div class="ewTableHeaderBtn" style="width: 25px;"><span class="ewTableHeaderCaption"><?php echo $t_201412->COL_6->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($t_201412->COL_6->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($t_201412->COL_6->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
+			<div class="ewTableHeaderBtn"><span class="ewTableHeaderCaption"><?php echo $t_201412->COL_6->FldCaption() ?></span><span class="ewTableHeaderSort"><?php if ($t_201412->COL_6->getSort() == "ASC") { ?><span class="caret ewSortUp"></span><?php } elseif ($t_201412->COL_6->getSort() == "DESC") { ?><span class="caret"></span><?php } ?></span></div>
         </div></div></th>
 	<?php } ?>
 <?php } ?>		
@@ -2983,11 +3026,26 @@ $t_201412_list->ListOptions->Render("body", "left", $t_201412_list->RowCnt);
 <?php if ($t_201412->RowType == EW_ROWTYPE_EDIT || $t_201412->CurrentMode == "edit") { ?>
 <input type="hidden" data-table="t_201412" data-field="x_id" name="x<?php echo $t_201412_list->RowIndex ?>_id" id="x<?php echo $t_201412_list->RowIndex ?>_id" value="<?php echo ew_HtmlEncode($t_201412->id->CurrentValue) ?>">
 <?php } ?>
+	<?php if ($t_201412->COL_3->Visible) { // COL 3 ?>
+		<td data-name="COL_3"<?php echo $t_201412->COL_3->CellAttributes() ?>>
+<?php if ($t_201412->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
+<span id="el<?php echo $t_201412_list->RowCnt ?>_t_201412_COL_3" class="form-group t_201412_COL_3">
+<input type="text" data-table="t_201412" data-field="x_COL_3" name="x<?php echo $t_201412_list->RowIndex ?>_COL_3" id="x<?php echo $t_201412_list->RowIndex ?>_COL_3" size="10" maxlength="7" placeholder="<?php echo ew_HtmlEncode($t_201412->COL_3->getPlaceHolder()) ?>" value="<?php echo $t_201412->COL_3->EditValue ?>"<?php echo $t_201412->COL_3->EditAttributes() ?>>
+</span>
+<?php } ?>
+<?php if ($t_201412->RowType == EW_ROWTYPE_VIEW) { // View record ?>
+<span id="el<?php echo $t_201412_list->RowCnt ?>_t_201412_COL_3" class="t_201412_COL_3">
+<span<?php echo $t_201412->COL_3->ViewAttributes() ?>>
+<?php echo $t_201412->COL_3->ListViewValue() ?></span>
+</span>
+<?php } ?>
+</td>
+	<?php } ?>
 	<?php if ($t_201412->COL_4->Visible) { // COL 4 ?>
 		<td data-name="COL_4"<?php echo $t_201412->COL_4->CellAttributes() ?>>
 <?php if ($t_201412->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
 <span id="el<?php echo $t_201412_list->RowCnt ?>_t_201412_COL_4" class="form-group t_201412_COL_4">
-<input type="text" data-table="t_201412" data-field="x_COL_4" name="x<?php echo $t_201412_list->RowIndex ?>_COL_4" id="x<?php echo $t_201412_list->RowIndex ?>_COL_4" size="30" maxlength="20" placeholder="<?php echo ew_HtmlEncode($t_201412->COL_4->getPlaceHolder()) ?>" value="<?php echo $t_201412->COL_4->EditValue ?>"<?php echo $t_201412->COL_4->EditAttributes() ?>>
+<input type="text" data-table="t_201412" data-field="x_COL_4" name="x<?php echo $t_201412_list->RowIndex ?>_COL_4" id="x<?php echo $t_201412_list->RowIndex ?>_COL_4" size="15" maxlength="20" placeholder="<?php echo ew_HtmlEncode($t_201412->COL_4->getPlaceHolder()) ?>" value="<?php echo $t_201412->COL_4->EditValue ?>"<?php echo $t_201412->COL_4->EditAttributes() ?>>
 </span>
 <?php } ?>
 <?php if ($t_201412->RowType == EW_ROWTYPE_VIEW) { // View record ?>
@@ -3017,7 +3075,7 @@ $t_201412_list->ListOptions->Render("body", "left", $t_201412_list->RowCnt);
 		<td data-name="COL_6"<?php echo $t_201412->COL_6->CellAttributes() ?>>
 <?php if ($t_201412->RowType == EW_ROWTYPE_EDIT) { // Edit record ?>
 <span id="el<?php echo $t_201412_list->RowCnt ?>_t_201412_COL_6" class="form-group t_201412_COL_6">
-<input type="text" data-table="t_201412" data-field="x_COL_6" name="x<?php echo $t_201412_list->RowIndex ?>_COL_6" id="x<?php echo $t_201412_list->RowIndex ?>_COL_6" size="15" placeholder="<?php echo ew_HtmlEncode($t_201412->COL_6->getPlaceHolder()) ?>" value="<?php echo $t_201412->COL_6->EditValue ?>"<?php echo $t_201412->COL_6->EditAttributes() ?>>
+<input type="text" data-table="t_201412" data-field="x_COL_6" name="x<?php echo $t_201412_list->RowIndex ?>_COL_6" id="x<?php echo $t_201412_list->RowIndex ?>_COL_6" size="5" placeholder="<?php echo ew_HtmlEncode($t_201412->COL_6->getPlaceHolder()) ?>" value="<?php echo $t_201412->COL_6->EditValue ?>"<?php echo $t_201412->COL_6->EditAttributes() ?>>
 </span>
 <?php } ?>
 <?php if ($t_201412->RowType == EW_ROWTYPE_VIEW) { // View record ?>
@@ -3136,6 +3194,8 @@ if ($t_201412_list->Recordset)
 <option value="20"<?php if ($t_201412_list->DisplayRecs == 20) { ?> selected<?php } ?>>20</option>
 <option value="50"<?php if ($t_201412_list->DisplayRecs == 50) { ?> selected<?php } ?>>50</option>
 <option value="100"<?php if ($t_201412_list->DisplayRecs == 100) { ?> selected<?php } ?>>100</option>
+<option value="200"<?php if ($t_201412_list->DisplayRecs == 200) { ?> selected<?php } ?>>200</option>
+<option value="500"<?php if ($t_201412_list->DisplayRecs == 500) { ?> selected<?php } ?>>500</option>
 <option value="ALL"<?php if ($t_201412->getRecordsPerPage() == -1) { ?> selected<?php } ?>><?php echo $Language->Phrase("AllRecords") ?></option>
 </select>
 </div>
